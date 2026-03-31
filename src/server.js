@@ -25,7 +25,7 @@ app.use(express.json());
 
 // 5. Middleware: allows frontend (different port) to call this server
 const allowedOrigins = [
-  "http://localhost:3000",
+  "http://localhost:3000","https://chatppt-frontend-3lhc961yr-pangashravanyadavs-projects.vercel.app/",
   "https://chatppt-frontend-gold.vercel.app/","https://chatppt-frontend-pangashravanyadavs-projects.vercel.app/"
   process.env.FRONTEND_URL,
 ].filter(Boolean);
