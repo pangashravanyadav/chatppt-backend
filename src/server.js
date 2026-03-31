@@ -26,9 +26,11 @@ app.use(express.json());
 // 5. Middleware: allows frontend (different port) to call this server
 const allowedOrigins = [
   "http://localhost:3000",
-  "https://chat-qvb7pk3dy-pangashravanyadavs-projects.vercel.app",
-  process.env.FRONTEND_URL,
-].filter(Boolean);
+  "https://chat-qvb7pk3dy-pangashravanyadavs-projects.vercel.app"
+];
+if (process.env.FRONTEND_URL) {
+  allowedOrigins.push(process.env.FRONTEND_URL);
+}
 
 app.use(cors({ origin: allowedOrigins, credentials: true }));
 
